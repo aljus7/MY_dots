@@ -95,6 +95,7 @@ button:hover {
 #power-profiles-daemon,
 #custom-notifications,
 #custom-drawer,
+#custom-nightlight,
 #custom-search,
 #custom-internet,
 #custom-terminal,
@@ -353,4 +354,8 @@ label:focus {
 
 #custom-search {
     background-color: #0F649B;
+}
+
+#custom-nightlight {
+    background-color: #A33700;
 }

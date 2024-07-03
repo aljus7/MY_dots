@@ -31,6 +31,7 @@
     ],
     "modules-right": [
         "idle_inhibitor",
+        "custom/nightlight",
         "pulseaudio",
         "network",
         "cpu",
@@ -214,6 +215,10 @@
       "format": "",
       "on-click": "nwg-drawer"
     },
+    "custom/nightlight": {
+      "format": "󱩌",
+      "on-click": "source /home/aljosa/.config/myScripts/gammastep_toggle.sh"
+    },
     /////////////////
     //app launchers//
     ////////////////
@@ -256,11 +261,11 @@
       "on-click": "freecad"
     },
     "custom/bitwarden":{
-      "format": "",
-      "on-click": "bitwarden"
+      "format": "",
+      "on-click": "flatpak run com.bitwarden.desktop"
     },
     "custom/joplin":{
-      "format": "󰺿",
+      "format": "󰰆",
       "on-click": "flatpak run net.cozic.joplin_desktop"
     },
     "custom/bottles":{
