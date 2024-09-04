@@ -1,33 +1,36 @@
 // -*- mode: jsonc -*-
-{
+[{
     // "layer": "top", // Waybar at top layer
     // "position": "bottom", // Waybar position (top|bottom|left|right)
     "output": "DP-2",
-    "height": 30, // Waybar height (to be removed for auto height)
+    "height": 32, // Waybar height (to be removed for auto height)
     // "width": 1280, // Waybar width
-    "spacing": 4, // Gaps between modules (4px)
+    "spacing": 0, // Gaps between modules (4px)
     // Choose the order of the modules
     "modules-left": [
         "custom/drawer",
-        "hyprland/workspaces"
-    ],
-    "modules-center": [
-        //"hyprland/window"
         "custom/search",
         "custom/internet",
+        "custom/thorium",
         "custom/terminal",
         "custom/nautilus",
         "custom/notepad",
         "custom/music",
         "custom/office",
-        "custom/gimp",
         "custom/krita",
-        "custom/freecad",
+        "custom/virtmanager",
         "custom/bitwarden",
         "custom/joplin",
         "custom/bottles",
         "custom/steam",
-        "custom/qbittorrent"
+        "custom/qbittorrent",
+        "custom/separator",
+        "wlr/taskbar"
+        //"wlr/taskbar"
+    ],
+    "modules-center": [
+        //"hyprland/window"
+        "hyprland/workspaces"
     ],
     "modules-right": [
         "idle_inhibitor",
@@ -41,11 +44,20 @@
         "clock"
     ],
     // Modules configuration
-    /*"hyprland/workspaces": {
+    "hyprland/workspaces": {
          "disable-scroll": true,
-         "all-outputs": true,
+         "all-outputs": false,
          "warp-on-scroll": false,
-         "format": "{name}: {icon}",
+         "format": "{name}",
+         /*"format": "{name}: {icon}",*/
+         "persistent-workspaces": {
+              "1": [],
+              "2": [],
+              "3": [],
+              "4": [],
+              "5": [],
+         }
+         /*
          "format-icons": {
              "1": "",
              "2": "",
@@ -55,8 +67,8 @@
              "urgent": "",
              "focused": "",
              "default": ""
-         }
-     },*/
+         }*/
+     },
     "keyboard-state": {
         "numlock": true,
         "capslock": true,
@@ -195,6 +207,24 @@
         },
         "on-click": "pavucontrol"
     },
+    "wlr/taskbar": {
+	"format": "{icon}",
+	"icon-size": 14,
+	//"icon-theme": "Numix-Circle",
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	/*"ignore-list": [
+	    "Alacritty"
+	],
+	"app_ids-mapping": {
+		"firefoxdeveloperedition": "firefox-developer-edition"
+	},
+	"rewrite": {
+		"Firefox Web Browser": "Firefox",
+		"Foot Server": "Terminal"
+	}*/
+    },
     "custom/media": {
         "format": "{icon} {}",
         "return-type": "json",
@@ -219,6 +249,11 @@
       "format": "󱩌",
       "on-click": "source /home/aljosa/.config/myScripts/gammastep_toggle.sh"
     },
+    "custom/separator": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+    },
     /////////////////
     //app launchers//
     ////////////////
@@ -231,6 +266,11 @@
       "format": "󰈹",
       "tooltip-format": "firefox",
       "on-click": "firefox"
+    },
+    "custom/thorium":{
+      "format": "",
+      "tooltip-format": "thorium",
+      "on-click": "gio launch /home/aljosa/.local/share/applications/thorium_browser.desktop"
     },
     "custom/terminal":{
       "format": "",
@@ -254,11 +294,15 @@
     },
     "custom/krita":{
       "format": "",
-      "on-click": "krita"
+      "on-click": "flatpak run org.kde.krita"
     },
     "custom/freecad":{
       "format": "",
       "on-click": "freecad"
+    },
+    "custom/virtmanager":{
+      "format": "",
+      "on-click": "virt-manager"
     },
     "custom/bitwarden":{
       "format": "",
@@ -284,4 +328,157 @@
       "format": "",
       "on-click": "nautilus"
     }
-}
+},  {
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    //"output": ["DP-3", "HDMI-A-1"],
+    "output": "DP-3",
+    "height": 32, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/search",
+        "custom/internet",
+        "custom/thorium",
+        "custom/terminal",
+        "custom/nautilus",
+        "custom/notepad",
+        "custom/music",
+        "custom/office",
+        "custom/krita",
+        "custom/virtmanager",
+        "custom/bitwarden",
+        "custom/joplin",
+        "custom/bottles",
+        "custom/steam",
+        "custom/qbittorrent",
+        "custom/separator",
+        "wlr/taskbar"
+    ],
+    /*
+    "modules-center": [
+        //"hyprland/window"
+        //"hyprland/workspaces"
+    ],
+    */
+    "modules-right": [
+        "idle_inhibitor",
+        "custom/notifications",
+        "clock"
+    ],
+    "wlr/taskbar": {
+	"format": "{icon}",
+	"icon-size": 14,
+	//"icon-theme": "Numix-Circle",
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	/*"ignore-list": [
+	    "Alacritty"
+	],
+	"app_ids-mapping": {
+		"firefoxdeveloperedition": "firefox-developer-edition"
+	},
+	"rewrite": {
+		"Firefox Web Browser": "Firefox",
+		"Foot Server": "Terminal"
+	}*/
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": "{:%H:%M\n%d.%m.%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/notifications": {
+      "format": "",
+      "on-click": "swaync-client -t"
+    },
+    "custom/search":{
+      "format": "",
+      "tooltip-format": "wofi drun",
+      "on-click": "wofi --show drun"
+    },
+    "custom/separator": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+    },
+    /////////////////
+    //app launchers//
+    ////////////////
+    "custom/internet":{
+      "format": "󰈹",
+      "tooltip-format": "firefox",
+      "on-click": "firefox"
+    },
+    "custom/thorium":{
+      "format": "",
+      "tooltip-format": "thorium",
+      "on-click": "gio launch /home/aljosa/.local/share/applications/thorium_browser.desktop"
+    },
+    "custom/terminal":{
+      "format": "",
+      "on-click": "kitty"
+    },
+    "custom/notepad":{
+      "format": "󱞂",
+      "on-click": "gnome-text-editor"
+    },
+    "custom/music":{
+      "format": "",
+      "on-click": "flatpak run org.strawberrymusicplayer.strawberry"
+    },
+    "custom/office":{
+      "format": "󱀽",
+      "on-click": "libreoffice"
+    },
+    "custom/gimp":{
+      "format": "",
+      "on-click": "gimp"
+    },
+    "custom/krita":{
+      "format": "",
+      "on-click": "flatpak run org.kde.krita"
+    },
+    "custom/freecad":{
+      "format": "",
+      "on-click": "freecad"
+    },
+    "custom/virtmanager":{
+      "format": "",
+      "on-click": "virt-manager"
+    },
+    "custom/bitwarden":{
+      "format": "",
+      "on-click": "flatpak run com.bitwarden.desktop"
+    },
+    "custom/joplin":{
+      "format": "󰰆",
+      "on-click": "flatpak run net.cozic.joplin_desktop"
+    },
+    "custom/bottles":{
+      "format": "",
+      "on-click": "flatpak run com.usebottles.bottles"
+    },
+    "custom/steam":{
+      "format": "",
+      "on-click": "/usr/bin/steam-runtime"
+    },
+    "custom/qbittorrent":{
+      "format": "󰇚",
+      "on-click": "qbittorrent"
+    },
+    "custom/nautilus":{
+      "format": "",
+      "on-click": "nautilus"
+    },
+    
+}]
