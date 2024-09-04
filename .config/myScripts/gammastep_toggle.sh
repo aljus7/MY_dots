@@ -6,5 +6,5 @@ if [ ! -z "$gammastep_statusjoza" ]; then
  pkill gammastep
 else
  # Start gammastep
- gammastep -O 4000 &
+ gammastep -O 2700 &
 fi
