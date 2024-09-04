@@ -1,0 +1,51 @@
+window {
+margin: 0px;
+border: 2px solid #132b39;
+background-color: #224c67;
+}
+
+#input {
+margin: 5px;
+border: none;
+color: #f8f8f2;
+background-color: #293b70;
+}
+
+#inner-box {
+margin: 5px;
+border: none;
+background-color: #181f34;
+}
+
+#outer-box {
+margin: 5px;
+border: none;
+background-color: #181f34;
+}
+
+#scroll {
+margin: 5px;
+border: none;
+}
+
+#text {
+margin: 5px;
+border: none;
+color: #f8f8f2;
+} 
+
+#entry.activatable #text {
+color: #deddda;
+}
+
+#entry > * {
+color: #f8f8f2;
+}
+
+#entry:selected {
+background-color: #44475a;
+}
+
+#entry:selected #text {
+font-weight: bold;
+}
