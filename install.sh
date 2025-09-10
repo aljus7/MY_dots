@@ -21,7 +21,7 @@ echo "###############################"
 
 echo "\nroot password needed (if not root)"
 sudo pacman -Syu --noconfirm
-sudo pacman -S hyprcursor hyprgraphics hypridle hyprland hyprland-qt-support hyprland-qtutils hyprlang hyprlock hyprpaper hyprpicker hyprutils hyprwayland-scanner xdg-desktop-portal-hyprland kitty sddm tee polkit-kde-agent polkit uwsm grim slurp swappy tesseract wl-clip-persist wl-clipboard gammastep swaync rofi rofi-emoji waybar xorg-xwayland networkmanager sed awk pipewire pipewire-pulse pavucontrol brightnessctl cups hplip firefox --noconfirm && echo "Packages successfully installed!"
+sudo pacman -S hyprcursor hypridle hyprland hyprlang hyprlock hyprpaper hyprpicker hyprutils hyprwayland-scanner xdg-desktop-portal-hyprland kitty sddm tee polkit-kde-agent polkit uwsm grim slurp swappy tesseract cliphist wl-clipboard gammastep swaync rofi rofi-emoji waybar xorg-xwayland networkmanager sed awk pipewire pipewire-pulse wireplumber pavucontrol brightnessctl cups hplip firefox jq git base-devel cmake meson cpio --noconfirm && echo "Packages successfully installed!"
 
 echo ""
 echo "#######################################"
@@ -44,6 +44,8 @@ sudo pacman -Syu --noconfirm
 
 #Install YAY
 sudo pacman -S --needed git base-devel --noconfirm && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si --noconfirm
+cd "$(dirname "$0")"
+pwd
 
 #Update arch
 sudo pacman -Syu --noconfirm
