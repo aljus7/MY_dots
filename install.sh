@@ -44,6 +44,14 @@ sudo pacman -Syu --noconfirm
 
 #Install YAY
 sudo pacman -S --needed git base-devel --noconfirm && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si --noconfirm
+
+if [[ "$(pwd)" == *yay-bin* ]]; then
+    cd .. || { echo "Error: Failed to change to parent directory"; exit 1; }
+    echo "Changed to parent directory: $(pwd)"
+else
+    echo "Current directory ($(pwd)) does not contain 'yay-bin', staying here"
+fi
+
 cd "$(dirname "$0")"
 pwd
 
