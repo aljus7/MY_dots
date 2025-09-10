@@ -106,6 +106,8 @@ echo "### Turning on services ... ###"
 echo "###############################"
 
 sudo systemctl daemon-reload
+sudo systemctl enable sddm NetworkManager cups
+sudo systemctl daemon-reload
 systemctl daemon-reload --user
 systemctl enable --user cliphist.service
 systemctl enable --user hyprpm.service
