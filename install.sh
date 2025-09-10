@@ -21,15 +21,12 @@ echo "###############################"
 
 echo "\nroot password needed (if not root)"
 sudo pacman -Syu --noconfirm
-sudo pacman -S hyprcursor hyprgraphics hypridle hyprland hyprland-qt-support hyprland-qtutils hyprlang hyprlock hyprpaper hyprpicker hyprutils hyprwayland-scanner xdg-desktop-portal-hyprland kitty --noconfirm
+sudo pacman -S hyprcursor hyprgraphics hypridle hyprland hyprland-qt-support hyprland-qtutils hyprlang hyprlock hyprpaper hyprpicker hyprutils hyprwayland-scanner xdg-desktop-portal-hyprland kitty sddm tee polkit-kde-agent polkit uwsm grim slurp swappy tesseract wl-clip-persist wl-clipboard gammastep swaync rofi rofi-emoji waybar xorg-xwayland networkmanager sed awk pipewire pipewire-pulse pavucontrol brightnessctl cups hplip firefox --noconfirm && echo "Packages successfully installed!"
 
 echo ""
 echo "#######################################"
 echo "### Installing sddm,chaotic,yay ... ###"
 echo "#######################################"
-
-#Sddm and tee and others install
-sudo pacman -S sddm tee polkit-kde-agent polkit uwsm grim slurp swappy tesseract wl-clip-persist wl-clipboard gammastep swaync rofi rofi-emoji waybar xorg-xwayland networkmanager sed awk pipewire pipewire-pulse pavucontrol brightnessctl cups hplip firefox --noconfirm
 
 #Chaotic install
 sudo pacman-key --recv-key 3056513887B78AEB --keyserver keyserver.ubuntu.com
