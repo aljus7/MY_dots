@@ -55,6 +55,8 @@ echo "###################################"
 echo "### Setting up moded NWG Drawer ###"
 echo "###################################"
 
+cd "$(dirname "$0")"
+pwd
 sudo cp ./usr_bin/nwg-drawer /usr/bin/
 sudo cp -r ./usr_share/nwg-drawer /usr/share
 
@@ -87,6 +89,9 @@ echo "#################################################"
 sudo pacman -S qbittorrent nautilus nwg-look zsh curl --noconfirm
 
 #wget https://raw.githubusercontent.com/moarram/headline/main/headline.zsh-theme 
+
+cd "$(dirname "$0")"
+pwd
 
 cp -r ./zsh_theme/headline.zsh-theme "$HOME/.oh-my-zsh/custom/themes"
 
