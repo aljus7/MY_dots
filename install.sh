@@ -108,7 +108,7 @@ sudo pacman -S qbittorrent nautilus nwg-look zsh curl gnome-text-editor otf-font
 cd "$(dirname "$0")"
 pwd
 
-cp -r ./.oh-my-zsh "$HOME/"
+cp -r ./oh-my-zsh/* "$HOME/.oh-my-zsh"
 
 cp ./.zshrc "$HOME"
 
