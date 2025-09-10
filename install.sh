@@ -1,5 +1,9 @@
 #!/bin/bash
 
+#Location of a script
+cd "$(dirname "$0")"
+pwd
+
 echo "Are you runing that sctipt from base arch install? [N/y]"
 read baseCheck
 if [ "$baseCheck" == "y" ] || [ "$baseCheck" == "Y" ]
@@ -9,9 +13,6 @@ else
     echo "Arch base install is needed. Use ARCHINSTALL to do that or do it MANUALLY."
     exit 0
 fi
-
-#Location of a script
-cd "$(dirname "$0")"
 
 echo ""
 echo "###############################"
@@ -45,7 +46,7 @@ Include = /etc/pacman.d/chaotic-mirrorlist' | sudo tee -a /etc/pacman.conf
 sudo pacman -Syu --noconfirm
 
 #Install YAY
-sudo pacman -S --needed git base-devel --noconfirm && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si
+sudo pacman -S --needed git base-devel --noconfirm && git clone https://aur.archlinux.org/yay-bin.git && cd yay-bin && makepkg -si --noconfirm
 
 #Update arch
 sudo pacman -Syu --noconfirm
@@ -91,31 +92,33 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 
 #wget https://raw.githubusercontent.com/moarram/headline/main/headline.zsh-theme 
 
-cp -r ./zsh_theme/headline.zsh-theme ~/.oh-my-zsh/custom/themes
+cp -r ./zsh_theme/headline.zsh-theme "$HOME/.oh-my-zsh/custom/themes"
 
-cp ./.zshrc ~
+cp ./.zshrc "$HOME"
 
 echo ""
 echo "#################################"
 echo "### Getting .config ready ... ###"
 echo "#################################"
 
-cp -r ./config/* $HOME/.config
+cp -r ./config/* "$HOME/.config"
 
 echo ""
 echo "###############################"
 echo "### Turning on services ... ###"
 echo "###############################"
 
-sudo systemctl enable --user cliphist.service
-sudo systemctl enable --user hyprpm.service
-sudo systemctl enable --user kde-polkit.service
-sudo systemctl enable --user waypaper-restore.service
-sudo systemctl enable --user wl-clip-persist.service
+sudo systemctl daemon-reload
+systemctl daemon-reload --user
+systemctl enable --user cliphist.service
+systemctl enable --user hyprpm.service
+systemctl enable --user kde-polkit.service
+systemctl enable --user waypaper-restore.service
+systemctl enable --user wl-clip-persist.service
 
-sudo systemctl enable --user hyprpaper
-sudo systemctl enable --user waybar
-sudo systemctl enable --user swaync
+systemctl enable --user hyprpaper
+systemctl enable --user waybar
+systemctl enable --user swaync
 
 echo "Input string to set up monitors in hyprland.conf (leave empty for automagic):"
 read moniSetUp
