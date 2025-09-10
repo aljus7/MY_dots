@@ -1,0 +1,11 @@
+[Unit]
+Description=GammaStep with UWSM
+After=default.target
+
+[Service]
+ExecStart=gammastep -O 2700
+Restart=always
+
+[Install]
+WantedBy=default.target
+

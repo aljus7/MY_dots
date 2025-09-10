@@ -1,0 +1,10 @@
+[Unit]
+Description=Pywall reapply theme from last wallpaper loaded
+After=graphical-session.target
+
+[Service]
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "Hyprland" ""
+ExecStart=wall -R
+
+[Install]
+WantedBy=graphical-session.target

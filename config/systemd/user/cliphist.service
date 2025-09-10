@@ -1,0 +1,12 @@
+[Unit]
+Description=Clipboard Persistence for Text Data
+After=graphical-session.target
+
+[Service]
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "Hyprland" ""
+ExecStart=wl-paste --watch cliphist -max-items 16 store
+Restart=on-failure
+Slice=app-graphical.slice
+
+[Install]
+WantedBy=graphical-session.target

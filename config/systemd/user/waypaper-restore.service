@@ -1,0 +1,11 @@
+[Unit]
+Description=Waypaper restore command
+After=graphical-session.target
+
+[Service]
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "Hyprland" ""
+ExecStart=waypaper --restore
+Slice=app-graphical.slice
+
+[Install]
+WantedBy=graphical-session.target

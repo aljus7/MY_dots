@@ -1,0 +1,548 @@
+// -*- mode: jsonc -*-
+[{
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    "output": "DP-2",
+    "height": 34, // Waybar height (to be removed for auto height)
+    //"reload_style_on_change": true,
+    // "width": 1280, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/drawer",
+        "custom/search",
+        "custom/thorium",
+        "custom/internet",
+        "custom/terminal",
+        "custom/nautilus",
+        "custom/notepad",
+        "custom/music",
+        "custom/office",
+        "custom/krita",
+        "custom/virtmanager",
+        "custom/bitwarden",
+        "custom/joplin",
+        "custom/bottles",
+        "custom/steam",
+        "custom/qbittorrent",
+        "custom/separator",
+        "wlr/taskbar"
+        //"wlr/taskbar"
+    ],
+    "modules-center": [
+        //"hyprland/window"
+        "hyprland/workspaces"
+    ],
+    "modules-right": [
+        "tray",
+        "pulseaudio",
+        //"network",
+        "cpu",
+        "memory",
+        "custom/layout",
+        "idle_inhibitor",
+        "custom/nightlight",
+        "custom/notifications",
+        "clock"
+    ],
+    // Modules configuration
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": false,
+         "warp-on-scroll": false,
+         "format": "{name}",
+         "format": "{icon}",
+         "persistent-workspaces": {
+              "1": [],
+              "2": [],
+              "3": [],
+              "4": [],
+              "5": [],
+              "6": [],
+         },
+         
+         "format-icons": {
+             "1": "I",
+             "2": "II",
+             "3": "III",
+             "4": "IV",
+             "5": "V",
+             "6": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+    "keyboard-state": {
+        "numlock": true,
+        "capslock": true,
+        "format": "{name} {icon}",
+        "format-icons": {
+            "locked": "",
+            "unlocked": ""
+        }
+    },
+    "hyprland/mode": {
+        "format": "<span style=\"italic\">{}</span>"
+    },
+    "hyprland/scratchpad": {
+        "format": "{icon} {count}",
+        "show-empty": false,
+        "format-icons": ["", ""],
+        "tooltip": true,
+        "tooltip-format": "{app}: {title}"
+    },
+    "mpd": {
+        "format": "{stateIcon} {consumeIcon}{randomIcon}{repeatIcon}{singleIcon}{artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S}) ⸨{songPosition}|{queueLength}⸩ {volume}% ",
+        "format-disconnected": "Disconnected ",
+        "format-stopped": "{consumeIcon}{randomIcon}{repeatIcon}{singleIcon}Stopped ",
+        "unknown-tag": "N/A",
+        "interval": 5,
+        "consume-icons": {
+            "on": " "
+        },
+        "random-icons": {
+            "off": "<span color=\"#f53c3c\"></span> ",
+            "on": " "
+        },
+        "repeat-icons": {
+            "on": " "
+        },
+        "single-icons": {
+            "on": "1 "
+        },
+        "state-icons": {
+            "paused": "",
+            "playing": ""
+        },
+        "tooltip-format": "MPD (connected)",
+        "tooltip-format-disconnected": "MPD (disconnected)"
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "tray": {
+        // "icon-size": 21,
+        "spacing": 10
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": "{:%H:%M\n%d.%m.%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "cpu": {
+        "format": "{usage:03}% ",
+        "tooltip": false
+    },
+    "memory": {
+        "format": "{:03}% "
+    },
+    "temperature": {
+        // "thermal-zone": 2,
+        // "hwmon-path": "/sys/class/hwmon/hwmon2/temp1_input",
+        "critical-threshold": 80,
+        // "format-critical": "{temperatureC}°C {icon}",
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+    "backlight": {
+        // "device": "acpi_video1",
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "battery": {
+        "states": {
+            // "good": 95,
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        // "format-good": "", // An empty format will hide the module
+        // "format-full": "",
+        "format-icons": ["", "", "", "", ""]
+    },
+    "battery#bat2": {
+        "bat": "BAT2"
+    },
+    "power-profiles-daemon": {
+      "format": "{icon}",
+      "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+      "tooltip": true,
+      "format-icons": {
+        "default": "",
+        "performance": "",
+        "balanced": "",
+        "power-saver": ""
+      }
+    },
+    "network": {
+        // "interface": "wlp2*", // (Optional) To force the use of this interface
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+    "pulseaudio": {
+        "scroll-step": 10, // %, can be a float
+        "format": "{icon} {format_source}",
+        "format-bluetooth": " {icon} {format_source}",
+        "format-bluetooth-muted": "  ▯▯▯▯ {format_source}",
+        "format-muted": " ▯▯▯▯  {format_source}",
+        "format-source": " ",
+        "format-source-muted": " ",
+        "format-icons": {
+            "headphone": [" ▯▯▯▯ ", " ▮▯▯▯ ", " ▮▮▯▯ ", " ▮▮▮▯ ", " ▮▮▮▮ "],
+            "hands-free": [" ▯▯▯▯ ", " ▮▯▯▯ ", " ▮▮▯▯ ", " ▮▮▮▯ ", " ▮▮▮▮ "],
+            "headset": [" ▯▯▯▯ ", " ▮▯▯▯ ", " ▮▮▯▯ ", " ▮▮▮▯ ", " ▮▮▮▮ "],
+            "phone": [" ▯▯▯▯ ", " ▮▯▯▯ ", " ▮▮▯▯ ", " ▮▮▮▯ ", " ▮▮▮▮ "],
+            "portable": [" ▯▯▯▯ ", " ▮▯▯▯ ", " ▮▮▯▯ ", " ▮▮▮▯ ", " ▮▮▮▮ "],
+            "car": [" ▯▯▯▯ ", " ▮▯▯▯ ", " ▮▮▯▯ ", " ▮▮▮▯ ", " ▮▮▮▮ "],
+            "default": [" ▯▯▯▯ ", " ▮▯▯▯ ", " ▮▮▯▯ ", " ▮▮▮▯ ", " ▮▮▮▮ "]
+        },
+        "on-click": "uwsm app -- pavucontrol"
+    },
+    "wlr/taskbar": {
+	"format": "{icon}",
+	"icon-size": 14,
+	//"icon-theme": "Numix-Circle",
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	/*"ignore-list": [
+	    "Alacritty"
+	],
+	"app_ids-mapping": {
+		"firefoxdeveloperedition": "firefox-developer-edition"
+	},
+	"rewrite": {
+		"Firefox Web Browser": "Firefox",
+		"Foot Server": "Terminal"
+	}*/
+    },
+    "custom/media": {
+        "format": "{icon} {}",
+        "return-type": "json",
+        "max-length": 40,
+        "format-icons": {
+            "spotify": "",
+            "default": "🎜"
+        },
+        "escape": true,
+        "exec": "$HOME/.config/waybar/mediaplayer.py 2> /dev/null" // Script in resources folder
+        // "exec": "$HOME/.config/waybar/mediaplayer.py --player spotify 2> /dev/null" // Filter player based on name
+    },
+    "custom/notifications": {
+        "tooltip": false,
+        "format": "{} {icon}",
+        "format-icons": {
+          "notification": "",
+          "none": "",
+          "dnd-notification": "",
+          "dnd-none": "",
+          "inhibited-notification": "",
+          "inhibited-none": "",
+          "dnd-inhibited-notification": "",
+          "dnd-inhibited-none": ""
+        },
+        "return-type": "json",
+        "exec-if": "which swaync-client",
+        "exec": "swaync-client -swb",
+        "on-click": "swaync-client -t -sw",
+        "on-click-right": "swaync-client -d -sw",
+        "escape": true
+  },
+    "custom/drawer": {
+      "format": "",
+      "on-click": "uwsm app -- nwg-drawer -c 12 -spacing 12 -nofs -wm 'uwsm'"
+    },
+    "custom/nightlight": {
+      "format": "󱩌",
+      "on-click": "~/.config/myScripts/gammastep_toggle.sh",
+      "exec": "~/.config/myScripts/gammastep_toggle_getClass.sh",
+      "return-type": "json",
+      "signal": 2
+    },
+    "custom/layout": {
+      "format": "{icon}",
+      "exec": "~/.config/myScripts/layout_get_json.sh",
+      "format-icons": {"default": "","master": "","hyprscroller": ""},
+      "on-click": "~/.config/myScripts/layout_toggle.sh",
+      "return-type": "json",
+      "signal": 3
+    },
+    "custom/separator": {
+      "format": "",
+      "interval": "once",
+      "tooltip": false
+    },
+    /////////////////
+    //app launchers//
+    ////////////////
+    "custom/search":{
+      "format": "",
+      "tooltip-format": "wofi drun",
+      "on-click": "uwsm app -- rofi -show drun -run-command \"uwsm app -- {cmd}\""
+    },
+    "custom/internet":{
+      "format": "󰈹",
+      "tooltip-format": "firefox",
+      "on-click": "uwsm app -- firefox"
+    },
+    "custom/thorium":{
+      "format": "",
+      "tooltip-format": "trivalent",
+      "on-click": "uwsm app -- trivalent"
+    },
+    "custom/terminal":{
+      "format": "",
+      "on-click": "uwsm app -- kitty"
+    },
+    "custom/notepad":{
+      "format": "󱞂",
+      "on-click": "uwsm app -- gnome-text-editor"
+    },
+    "custom/music":{
+      "format": "",
+      "on-click": "uwsm app -- flatpak run org.strawberrymusicplayer.strawberry"
+    },
+    "custom/office":{
+      "format": "󱀽",
+      "on-click": "uwsm app -- env DESKTOPINTEGRATION=1 ~/AppImages/onlyoffice_desktop_editors.appimage"
+    },
+    "custom/gimp":{
+      "format": "",
+      "on-click": "uwsm app -- gimp"
+    },
+    "custom/krita":{
+      "format": "",
+      "on-click": "uwsm app -- flatpak run org.kde.krita"
+    },
+    "custom/freecad":{
+      "format": "",
+      "on-click": "uwsm app -- freecad"
+    },
+    "custom/virtmanager":{
+      "format": "",
+      "on-click": "uwsm app -- virt-manager"
+    },
+    "custom/bitwarden":{
+      "format": "",
+      "on-click": "uwsm app -- flatpak run com.bitwarden.desktop"
+    },
+    "custom/joplin":{
+      "format": "󰰆",
+      "on-click": "uwsm app -- env DESKTOPINTEGRATION=1 ~/AppImages/joplin.appimage --no-sandbox"
+    },
+    "custom/bottles":{
+      "format": "",
+      "on-click": "uwsm app -- flatpak run com.usebottles.bottles"
+    },
+    "custom/steam":{
+      "format": "",
+      "on-click": "uwsm app -- /usr/bin/steam"
+    },
+    "custom/qbittorrent":{
+      "format": "󰇚",
+      "on-click": "uwsm app -- qbittorrent"
+    },
+    "custom/nautilus":{
+      "format": "",
+      "on-click": "uwsm app -- nautilus"
+    }
+},  {
+    // "layer": "top", // Waybar at top layer
+    // "position": "bottom", // Waybar position (top|bottom|left|right)
+    //"output": ["DP-3", "HDMI-A-1"],
+    "output": "DP-3",
+    "height": 34, // Waybar height (to be removed for auto height)
+    // "width": 1280, // Waybar width
+    "spacing": 0, // Gaps between modules (4px)
+    // Choose the order of the modules
+    "modules-left": [
+        "custom/drawer",
+        "custom/search",
+        "custom/thorium",
+        "custom/internet",
+        "custom/terminal",
+        "custom/nautilus",
+        "custom/notepad",
+        "custom/music",
+        "custom/office",
+        "custom/krita",
+        "custom/virtmanager",
+        "custom/bitwarden",
+        "custom/joplin",
+        "custom/bottles",
+        "custom/steam",
+        "custom/qbittorrent",
+        "custom/separator",
+        "wlr/taskbar"
+    ],
+    /*
+    "modules-center": [
+        //"hyprland/window"
+        //"hyprland/workspaces"
+    ],
+    */
+    "modules-right": [
+        "hyprland/workspaces",
+        //"custom/layout",
+        "custom/notifications",
+        "clock"
+    ],
+    "hyprland/workspaces": {
+         "disable-scroll": true,
+         "all-outputs": false,
+         "warp-on-scroll": false,
+         "format": "{name}",
+         "format": "{icon}",
+         "persistent-workspaces": {
+              "11": [],
+              "12": [],
+              "13": [],
+              "14": [],
+         },
+         
+         "format-icons": {
+             "11": "I",
+             "12": "II",
+             "13": "III",
+             "14": "",
+             "urgent": "",
+             "focused": "",
+             "default": ""
+         }
+     },
+    "wlr/taskbar": {
+	"format": "{icon}",
+	"icon-size": 14,
+	//"icon-theme": "Numix-Circle",
+	"tooltip-format": "{title}",
+	"on-click": "activate",
+	"on-click-middle": "close",
+	/*"ignore-list": [
+	    "Alacritty"
+	],
+	"app_ids-mapping": {
+		"firefoxdeveloperedition": "firefox-developer-edition"
+	},
+	"rewrite": {
+		"Firefox Web Browser": "Firefox",
+		"Foot Server": "Terminal"
+	}*/
+    },
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+    "clock": {
+        // "timezone": "America/New_York",
+        "format": "{:%H:%M\n%d.%m.%Y}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>"
+    },
+    "custom/notifications": {
+      "format": "",
+      "on-click": "swaync-client -t -sw"
+    },
+    "custom/layout": {
+      "format": "",
+      "on-click": "uwsm app -- ~/.config/myScripts/layout_toggle.sh"
+    },
+    "custom/drawer": {
+      "format": "",
+      "on-click": "uwsm app -- nwg-drawer -c 5 -nocats -nofs -wm 'uwsm'"
+    },
+    "custom/search":{
+      "format": "",
+      "tooltip-format": "wofi drun",
+      "on-click": "uwsm app -- rofi -show drun -run-command \"uwsm app -- {cmd}\""
+    },
+    "custom/separator": {
+    "format": "|",
+    "interval": "once",
+    "tooltip": false
+    },
+    /////////////////
+    //app launchers//
+    ////////////////
+    "custom/internet":{
+      "format": "󰈹",
+      "tooltip-format": "firefox",
+      "on-click": "uwsm app -- firefox"
+    },
+    "custom/thorium":{
+      "format": "",
+      "tooltip-format": "trivalent",
+      "on-click": "uwsm app -- trivalent"
+    },
+    "custom/terminal":{
+      "format": "",
+      "on-click": "uwsm app -- kitty"
+    },
+    "custom/notepad":{
+      "format": "󱞂",
+      "on-click": "uwsm app -- gnome-text-editor"
+    },
+    "custom/music":{
+      "format": "",
+      "on-click": "uwsm app -- flatpak run org.strawberrymusicplayer.strawberry"
+    },
+    "custom/office":{
+      "format": "󱀽",
+      "on-click": "uwsm app -- env DESKTOPINTEGRATION=1 ~/AppImages/onlyoffice_desktop_editors.appimage"
+    },
+    "custom/gimp":{
+      "format": "",
+      "on-click": "uwsm app -- gimp"
+    },
+    "custom/krita":{
+      "format": "",
+      "on-click": "uwsm app -- flatpak run org.kde.krita"
+    },
+    "custom/freecad":{
+      "format": "",
+      "on-click": "uwsm app -- freecad"
+    },
+    "custom/virtmanager":{
+      "format": "",
+      "on-click": "uwsm app -- virt-manager"
+    },
+    "custom/bitwarden":{
+      "format": "",
+      "on-click": "uwsm app -- flatpak run com.bitwarden.desktop"
+    },
+    "custom/joplin":{
+      "format": "󰰆",
+      "on-click": "uwsm app -- env DESKTOPINTEGRATION=1 ~/AppImages/joplin.appimage --no-sandbox"
+    },
+    "custom/bottles":{
+      "format": "",
+      "on-click": "uwsm app -- flatpak run com.usebottles.bottles"
+    },
+    "custom/steam":{
+      "format": "",
+      "on-click": "uwsm app -- /usr/bin/steam"
+    },
+    "custom/qbittorrent":{
+      "format": "󰇚",
+      "on-click": "uwsm app -- qbittorrent"
+    },
+    "custom/nautilus":{
+      "format": "",
+      "on-click": "uwsm app -- nautilus"
+    },
+    
+}]

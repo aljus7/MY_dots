@@ -1,0 +1,11 @@
+[Unit]
+Description=Clipboard Persistence for Text Data
+After=graphical-session.target
+
+[Service]
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "Hyprland" ""
+ExecStart=wl-clip-persist --clipboard regular
+Restart=always
+
+[Install]
+WantedBy=graphical-session.target

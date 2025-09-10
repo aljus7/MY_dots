@@ -1,0 +1,10 @@
+[Unit]
+Description=Hyprland plugin mamager
+After=graphical-session.target
+
+[Service]
+ExecCondition=/lib/systemd/systemd-xdg-autostart-condition "Hyprland" ""
+ExecStart=hyprpm reload -n
+
+[Install]
+WantedBy=graphical-session.target
