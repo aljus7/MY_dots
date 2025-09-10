@@ -86,9 +86,6 @@ echo "#################################################"
 
 sudo pacman -S qbittorrent nautilus nwg-look zsh curl --noconfirm
 
-# oh my zsh install
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
-
 #wget https://raw.githubusercontent.com/moarram/headline/main/headline.zsh-theme 
 
 cp -r ./zsh_theme/headline.zsh-theme "$HOME/.oh-my-zsh/custom/themes"
@@ -126,5 +123,8 @@ read moniSetUp
 sed -i "s/##_monitor_configuration_##/$moniSetUp/" "$HOME/.config/hypr/hyprland.conf"
 
 sudo usermod -aG video,render,scanner "$USER"
+
+# oh my zsh install
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
 
 echo "!!! USE UWSM HYPRLAND OPTION AT LOGIN (top left corner in sddm)"
