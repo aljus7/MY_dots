@@ -21,7 +21,7 @@ echo "###############################"
 
 echo "\nroot password needed (if not root)"
 sudo pacman -Syu --noconfirm
-sudo pacman -S hyprcursor hypridle hyprland hyprlang hyprlock hyprpaper hyprpicker hyprutils hyprwayland-scanner xdg-desktop-portal-hyprland kitty sddm polkit-kde-agent polkit uwsm grim slurp swappy tesseract cliphist wl-clipboard gammastep swaync rofi rofi-emoji waybar xorg-xwayland networkmanager sed awk pipewire pipewire-pulse wireplumber pavucontrol brightnessctl cups hplip firefox jq git base-devel cmake meson cpio --noconfirm && echo "Packages successfully installed!" || sleep 180
+sudo pacman -S util-linux hyprcursor hypridle hyprland hyprlang hyprlock hyprpaper hyprpicker hyprutils hyprwayland-scanner xdg-desktop-portal-hyprland kitty sddm polkit-kde-agent polkit uwsm grim slurp swappy tesseract cliphist wl-clipboard gammastep swaync rofi rofi-emoji waybar xorg-xwayland networkmanager sed awk pipewire pipewire-pulse wireplumber pavucontrol brightnessctl cups hplip firefox jq git base-devel cmake meson cpio --noconfirm && echo "Packages successfully installed!" || sleep 180
 
 echo ""
 echo "#######################################"
@@ -101,7 +101,7 @@ echo "#################################################"
 echo "### Installing other software from arch repos ###"
 echo "#################################################"
 
-sudo pacman -S qbittorrent nautilus nwg-look zsh curl gnome-text-editor --noconfirm
+sudo pacman -S qbittorrent nautilus nwg-look zsh curl gnome-text-editor otf-font-awesome ttf-liberation ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common --noconfirm
 
 #wget https://raw.githubusercontent.com/moarram/headline/main/headline.zsh-theme 
 
@@ -150,6 +150,7 @@ sed -i "s/##_monitor_configuration_##/$moniSetUp/" "$HOME/.config/hypr/hyprland.
 sudo usermod -aG video,render,scanner "$USER"
 
 # oh my zsh install
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+#sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)"
+chsh -s $(which zsh)
 
 echo "!!! USE UWSM HYPRLAND OPTION AT LOGIN (top left corner in sddm)"
