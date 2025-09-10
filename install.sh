@@ -80,7 +80,7 @@ echo "###########################"
 echo "### Installing from AUR ###"
 echo "###########################"
 
-yay -S trivalent-bin --noconfirm
+yay -S trivalent-bin aur/wallust-git --noconfirm
 
 echo ""
 echo "#######################################"
