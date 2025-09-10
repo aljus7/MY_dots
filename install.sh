@@ -154,3 +154,6 @@ sudo usermod -aG video,render,scanner "$USER"
 chsh -s $(which zsh)
 
 echo "!!! USE UWSM HYPRLAND OPTION AT LOGIN (top left corner in sddm)"
+
+echo "SYSTEM WILL REBOOT IN 5 SEC"
+sleep 5 && sudo reboot
