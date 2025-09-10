@@ -73,7 +73,14 @@ echo "###################################"
 echo "### Installing from chaotic AUR ###"
 echo "###################################"
 
-sudo pacman -S waypaper-git trivalent-bin --noconfirm
+sudo pacman -S chaotic-aur/waypaper-git --noconfirm
+
+echo ""
+echo "###########################"
+echo "### Installing from AUR ###"
+echo "###########################"
+
+yay -S trivalent-bin --noconfirm
 
 echo ""
 echo "#######################################"
@@ -94,7 +101,7 @@ echo "#################################################"
 echo "### Installing other software from arch repos ###"
 echo "#################################################"
 
-sudo pacman -S qbittorrent nautilus nwg-look zsh curl --noconfirm
+sudo pacman -S qbittorrent nautilus nwg-look zsh curl gnome-text-editor --noconfirm
 
 #wget https://raw.githubusercontent.com/moarram/headline/main/headline.zsh-theme 
 
@@ -112,6 +119,10 @@ echo "#################################"
 
 cp -r ./config/* "$HOME/.config"
 
+cp ./wallpaper.png "$HOME/wallpaper"
+
+wallust run "$HOME/wallpaper" && "$HOME/.config/myScripts/update-colors.sh"
+
 echo ""
 echo "###############################"
 echo "### Turning on services ... ###"
@@ -126,6 +137,7 @@ systemctl enable --user hyprpm.service
 systemctl enable --user kde-polkit.service
 systemctl enable --user waypaper-restore.service
 systemctl enable --user wl-clip-persist.service
+
 
 systemctl enable --user hyprpaper
 systemctl enable --user waybar
