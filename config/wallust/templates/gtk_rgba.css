@@ -1,0 +1,20 @@
+@define-color cursorRgba rgba({{ cursor | rgb }},0.40);
+@define-color backgroundRgba rgba({{ background | rgb }},0.40);
+@define-color foregroundRgba rgba({{ foreground | rgb }},0.40);
+
+@define-color colorRgba0  rgba({{ color0 | rgb }},0.40);
+@define-color colorRgba1  rgba({{ color1 | rgb }},0.40);
+@define-color colorRgba2  rgba({{ color2 | rgb }},0.40);
+@define-color colorRgba3  rgba({{ color3 | rgb }},0.40);
+@define-color colorRgba4  rgba({{ color4 | rgb }},0.40);
+@define-color colorRgba5  rgba({{ color5 | rgb }},0.40);
+@define-color colorRgba6  rgba({{ color6 | rgb }},0.40);
+@define-color colorRgba7  rgba({{ color7 | rgb }},0.40);
+@define-color colorRgba8  rgba({{ color8 | rgb }},0.40);
+@define-color colorRgba9  rgba({{ color9 | rgb }},0.40);
+@define-color colorRgba10 rgba({{ color10 | rgb }},0.40);
+@define-color colorRgba11 rgba({{ color11 | rgb }},0.40);
+@define-color colorRgba12 rgba({{ color12 | rgb }},0.40);
+@define-color colorRgba13 rgba({{ color13 | rgb }},0.40);
+@define-color colorRgba14 rgba({{ color14 | rgb }},0.40);
+@define-color colorRgba15 rgba({{ color15 | rgb }},0.40);

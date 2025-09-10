@@ -1,0 +1,41 @@
+window {
+    background-color: rgba (43, 43, 43, 0.80);
+    color: #eeeeee
+}
+
+/* search entry */
+entry {
+    background-color: @color1;
+    border: 1px solid #B8B8B0;
+    border-radius: 8px;
+}
+
+button {
+    background: none;
+    border: none;
+    /*border-radius: 8px;*/
+}
+
+image {
+    background: none;
+}
+
+button:hover {
+    background-color: @colorRgba3;
+}
+
+/* in case you wanted to give category buttons a different look */
+#category-button {
+    margin: 0 4px 0 4px;
+}
+
+#pinned-box {
+    padding-bottom: 6px;
+    border-bottom: 1px dotted gray
+}
+
+#files-box {
+    padding: 5px;
+    border: 1px dotted gray;
+    border-radius: 15px
+}

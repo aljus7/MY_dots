@@ -1,0 +1,10 @@
+* {	
+	color0: {{color0}};
+	color1: {{color1}};
+	color3: {{color3}};
+	color2: {{color2}};
+	colorRgba0: rgba({{ color0 | rgb }},0.40);
+	colorRgba1: rgba({{ color1 | rgb }},0.40);
+	colorRgba2: rgba({{ color2 | rgb }},0.40);
+	colorRgba3: rgba({{ color3 | rgb }},0.40);
+}

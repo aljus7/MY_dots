@@ -1,0 +1,7 @@
+export XCURSOR_SIZE=24
+export XCURSOR_THEME=Notwaita-Black
+export QT_QPA_PLATFORMTHEME=qt5ct
+export LIBVIRT_DEFAULT_URI=qemu:///system
+export ELECTRON_OZONE_PLATFORM_HINT=wayland
+# export PATH=$HOME/vcpkg:$PATH
+# export CMAKE_TOOLCHAIN_FILE=$HOME/vcpkg/scripts/buildsystems/vcpkg.cmake
