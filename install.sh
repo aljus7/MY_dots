@@ -108,7 +108,7 @@ sudo pacman -S qbittorrent nautilus nwg-look zsh curl gnome-text-editor otf-font
 cd "$(dirname "$0")"
 pwd
 
-cp -r ./zsh_theme/headline.zsh-theme "$HOME/.oh-my-zsh/custom/themes"
+cp -r ./.oh-my-zsh "$HOME/"
 
 cp ./.zshrc "$HOME"
 
