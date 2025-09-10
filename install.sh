@@ -101,14 +101,14 @@ echo "#################################################"
 echo "### Installing other software from arch repos ###"
 echo "#################################################"
 
-sudo pacman -S qbittorrent nautilus nwg-look zsh curl gnome-text-editor otf-font-awesome ttf-liberation ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common --noconfirm
+sudo pacman -S qbittorrent nautilus nwg-look zsh curl gnome-text-editor otf-font-awesome ttf-liberation ttf-nerd-fonts-symbols ttf-nerd-fonts-symbols-common unzip --noconfirm
 
 #wget https://raw.githubusercontent.com/moarram/headline/main/headline.zsh-theme 
 
 cd "$(dirname "$0")"
 pwd
 
-cp -r ./oh-my-zsh/* "$HOME/.oh-my-zsh"
+unzip .oh-my-zsh.zip -d "$HOME/"
 
 cp ./.zshrc "$HOME"
 
