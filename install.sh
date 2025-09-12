@@ -119,6 +119,7 @@ echo "#################################"
 
 cp -r ./config/* "$HOME/.config"
 
+mkdir -p "$HOME/wallpaper"
 cp ./wallpaper.png "$HOME/wallpaper/wallpaper.png"
 
 wallust run "$HOME/wallpaper/wallpaper.png" && "$HOME/.config/myScripts/update-colors.sh"
