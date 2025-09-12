@@ -1,6 +1,8 @@
 # If you come from bash you might have to change your $PATH.
 # export PATH=$HOME/bin:$HOME/.local/bin:/usr/local/bin:$PATH
 (cat ~/.cache/wallust/sequences &)
+# Theme file
+source ~/.oh-my-zsh/custom/themes/headline/headline.zsh-theme
 # Path to your Oh My Zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
 
@@ -8,7 +10,7 @@ export ZSH="$HOME/.oh-my-zsh"
 # load a random theme each time Oh My Zsh is loaded, in which case,
 # to know which specific one was loaded, run: echo $RANDOM_THEME
 # See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes
-ZSH_THEME="headline"
+# ZSH_THEME="headline"
 
 # Set list of themes to pick from when loading at random
 # Setting this variable when ZSH_THEME=random will cause zsh to load
