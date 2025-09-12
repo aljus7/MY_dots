@@ -119,11 +119,11 @@ echo "#################################"
 
 cp -r ./config/* "$HOME/.config"
 
-cp ./wallpaper.png "$HOME/wallpaper/"
+cp ./wallpaper.png "$HOME/wallpaper/wallpaper.png"
 
-wallust run "$HOME/wallpaper" && "$HOME/.config/myScripts/update-colors.sh"
+wallust run "$HOME/wallpaper/wallpaper.png" && "$HOME/.config/myScripts/update-colors.sh"
 
-gsettings set org.gnome.desktop.interface color-scheme 'prefer-dark'
+gsettings set org.gnome.desktop.interface color-scheme prefer-dark
 gsettings set org.gnome.desktop.interface gtk-theme 'Adwaita-dark'
 
 echo ""
