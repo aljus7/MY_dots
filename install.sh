@@ -21,7 +21,7 @@ echo "###############################"
 
 echo "\nroot password needed (if not root)"
 sudo pacman -Syu --noconfirm
-sudo pacman -S util-linux hyprcursor hypridle hyprland hyprlang hyprlock hyprpaper hyprpicker hyprutils hyprwayland-scanner xdg-desktop-portal-hyprland kitty sddm polkit-kde-agent polkit uwsm grim slurp swappy tesseract cliphist wl-clipboard gammastep swaync rofi rofi-emoji waybar xorg-xwayland networkmanager sed awk pipewire pipewire-pulse wireplumber pavucontrol brightnessctl cups hplip firefox jq git base-devel cmake meson cpio libnotify bc qt5ct qt6ct --noconfirm && echo "Packages successfully installed!" || sleep 180
+sudo pacman -S util-linux hyprcursor hypridle hyprland hyprlang hyprlock hyprpaper hyprpicker hyprutils hyprwayland-scanner xdg-desktop-portal-hyprland kitty sddm polkit-kde-agent polkit uwsm grim slurp swappy tesseract cliphist wl-clipboard gammastep swaync rofi rofi-emoji waybar xorg-xwayland networkmanager sed awk pipewire pipewire-pulse wireplumber pavucontrol brightnessctl cups hplip firefox jq git base-devel cmake meson cpio libnotify bc qt5ct qt6ct imagemagick --noconfirm && echo "Packages successfully installed!" || sleep 180
 
 echo ""
 echo "#######################################"
